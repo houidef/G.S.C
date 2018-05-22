@@ -1,0 +1,225 @@
+unit Unit52;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, QRCtrls, QuickRpt, ExtCtrls;
+type
+  TForm52=class(TForm)
+    QuickRep1: TQuickRep;
+    QRShape36: TQRShape;
+    QRShape47: TQRShape;
+    QRShape46: TQRShape;
+    QRShape43: TQRShape;
+    QRShape42: TQRShape;
+    QRShape45: TQRShape;
+    QRShape44: TQRShape;
+    QRShape41: TQRShape;
+    QRShape40: TQRShape;
+    v: TQRShape;
+    QRShape38: TQRShape;
+    QRShape37: TQRShape;
+    QRShape32: TQRShape;
+    QRShape33: TQRShape;
+    QRShape4: TQRShape;
+    QRSubDetail1: TQRSubDetail;
+    QRLabel5: TQRLabel;
+    QRShape52: TQRShape;
+    QRLabel4: TQRLabel;
+    QRLabel6: TQRLabel;
+    QRShape1: TQRShape;
+    QRShape2: TQRShape;
+    QRShape3: TQRShape;
+    QRShape5: TQRShape;
+    QRShape6: TQRShape;
+    QRShape7: TQRShape;
+    QRShape8: TQRShape;
+    QRShape9: TQRShape;
+    QRShape10: TQRShape;
+    QRShape11: TQRShape;
+    QRShape12: TQRShape;
+    QRShape13: TQRShape;
+    QRShape14: TQRShape;
+    QRShape15: TQRShape;
+    QRShape16: TQRShape;
+    QRShape17: TQRShape;
+    QRShape18: TQRShape;
+    QRShape19: TQRShape;
+    QRShape20: TQRShape;
+    QRShape21: TQRShape;
+    QRShape22: TQRShape;
+    QRShape23: TQRShape;
+    QRShape24: TQRShape;
+    QRShape25: TQRShape;
+    QRShape26: TQRShape;
+    QRShape27: TQRShape;
+    QRShape28: TQRShape;
+    QRShape29: TQRShape;
+    QRShape30: TQRShape;
+    QRShape31: TQRShape;
+    QRLabel9: TQRLabel;
+    QRLabel10: TQRLabel;
+    QRLabel11: TQRLabel;
+    QRLabel12: TQRLabel;
+    QRLabel13: TQRLabel;
+    QRLabel14: TQRLabel;
+    QRLabel15: TQRLabel;
+    QRLabel16: TQRLabel;
+    QRLabel17: TQRLabel;
+    QRLabel18: TQRLabel;
+    QRLabel19: TQRLabel;
+    QRLabel20: TQRLabel;
+    QRLabel21: TQRLabel;
+    QRLabel22: TQRLabel;
+    QRLabel23: TQRLabel;
+    QRLabel24: TQRLabel;
+    QRLabel25: TQRLabel;
+    QRLabel26: TQRLabel;
+    QRDBText1: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRLabel27: TQRLabel;
+    QRLabel28: TQRLabel;
+    QRShape34: TQRShape;
+    QRShape35: TQRShape;
+    QRDBText11: TQRDBText;
+    QRDBText12: TQRDBText;
+    QRDBText13: TQRDBText;
+    QRDBText14: TQRDBText;
+    QRDBText15: TQRDBText;
+    QRDBText16: TQRDBText;
+    QRDBText10: TQRDBText;
+    QRDBText17: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRDBText6: TQRDBText;
+    QRDBText7: TQRDBText;
+    QRDBText8: TQRDBText;
+    QRDBText9: TQRDBText;
+    QRLabel31: TQRLabel;
+    QRLabel32: TQRLabel;
+    QRLabel33: TQRLabel;
+    QRLabel34: TQRLabel;
+    QRLabel35: TQRLabel;
+    QRLabel36: TQRLabel;
+    QRLabel37: TQRLabel;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRDBText18: TQRDBText;
+    QRDBText19: TQRDBText;
+    QRDBText20: TQRDBText;
+    QRDBText21: TQRDBText;
+    QRDBText22: TQRDBText;
+    QRDBText24: TQRDBText;
+    QRDBText25: TQRDBText;
+    QRLabel7: TQRLabel;
+    QRShape39: TQRShape;
+    QRDBText27: TQRDBText;
+    QRDBText26: TQRDBText;
+    QRDBText28: TQRDBText;
+    QRDBText29: TQRDBText;
+    QRLabel1: TQRLabel;
+    QRDBText30: TQRDBText;
+    QRLabel2: TQRLabel;
+    QRDBText31: TQRDBText;
+    QRLabel3: TQRLabel;
+    QRDBText32: TQRDBText;
+    QRLabel8: TQRLabel;
+    QRDBText33: TQRDBText;
+    QRLabel29: TQRLabel;
+    QRLabel30: TQRLabel;
+    QRShape48: TQRShape;
+    QRShape49: TQRShape;
+    QRDBText34: TQRDBText;
+    QRDBText35: TQRDBText;
+    QRShape50: TQRShape;
+    QRShape51: TQRShape;
+    QRShape53: TQRShape;
+    QRShape54: TQRShape;
+    QRShape55: TQRShape;
+    QRShape56: TQRShape;
+    QRShape57: TQRShape;
+    QRShape58: TQRShape;
+    QRShape59: TQRShape;
+    QRShape60: TQRShape;
+    QRShape61: TQRShape;
+    QRShape62: TQRShape;
+    QRShape63: TQRShape;
+    QRShape64: TQRShape;
+    QRShape65: TQRShape;
+    QRShape66: TQRShape;
+    QRShape67: TQRShape;
+    QRShape68: TQRShape;
+    QRShape69: TQRShape;
+    QRShape70: TQRShape;
+    QRShape71: TQRShape;
+    QRShape72: TQRShape;
+    QRShape73: TQRShape;
+    QRShape74: TQRShape;
+    QRDBText36: TQRDBText;
+    QRDBText37: TQRDBText;
+    QRDBText38: TQRDBText;
+    QRDBText39: TQRDBText;
+    QRDBText40: TQRDBText;
+    QRDBText41: TQRDBText;
+    QRDBText42: TQRDBText;
+    QRDBText43: TQRDBText;
+    QRDBText44: TQRDBText;
+    QRDBText45: TQRDBText;
+    QRDBText46: TQRDBText;
+    QRDBText47: TQRDBText;
+    QRDBText48: TQRDBText;
+    QRDBText49: TQRDBText;
+    QRDBText50: TQRDBText;
+    QRDBText51: TQRDBText;
+    QRDBText52: TQRDBText;
+    QRDBText53: TQRDBText;
+    QRDBText54: TQRDBText;
+    QRDBText55: TQRDBText;
+    QRDBText56: TQRDBText;
+    QRDBText57: TQRDBText;
+    QRDBText58: TQRDBText;
+    QRLabel38: TQRLabel;
+    QRLabel39: TQRLabel;
+    QRShape75: TQRShape;
+    QRShape76: TQRShape;
+    QRDBText59: TQRDBText;
+    QRShape77: TQRShape;
+    QRDBText60: TQRDBText;
+    QRDBText61: TQRDBText;
+    procedure _PROC_0069B5D8(Sender : TObject);
+    procedure _PROC_0069B5E0(Sender : TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form52: TForm52;
+
+{This file is generated by DelphiDecompiler version 1.1 Copyright (c) 1997-2009 BitMaker}
+
+implementation
+
+{$R *.DFM}
+
+procedure TForm52._PROC_0069B5D8(Sender : TObject);
+begin
+(*
+0069B5D8   832DB4366B0001         sub     dword ptr [$006B36B4], +$01
+0069B5DF   C3                     ret
+
+*)
+end;
+
+procedure TForm52._PROC_0069B5E0(Sender : TObject);
+begin
+(*
+0069B5E0   2CB6                   sub     al, $B6
+0069B5E2   690000000000           imul    eax, [eax], $00000000
+0069B5E8   0000                   add     [eax], al
+
+*)
+end;
+
+end.
