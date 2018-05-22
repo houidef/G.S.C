@@ -1,6 +1,6 @@
-# GSC
+ï»¿# GSC
 Fr: Gestion des salaires des fonctionnaires dans le secteur de formation professionelle
-Ar: ÊÓíÑ ÇÌæÑ ÚãÇá ŞØÇÚ ÇáÊßæíä Çáãåäí 
+Ar: ØªØ³ÙŠØ± Ø§Ø¬ÙˆØ± Ø¹Ù…Ø§Ù„ Ù‚Ø·Ø§Ø¹ Ø§Ù„ØªÙƒÙˆÙŠÙ† Ø§Ù„Ù…Ù‡Ù†ÙŠ 
 En: 
 The files are available under GPLv3.
 So this license should be okay also for commerical projects.
