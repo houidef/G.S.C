@@ -225,6 +225,7 @@ type
     sDBLookupComboBox3: TsDBLookupComboBox;
     ActionList1: TActionList;
     DataSetPost1: TDataSetPost;
+    sDBLookupComboBox4: TsDBLookupComboBox;
     procedure sBitBtn13Click(Sender : TObject);
     procedure sBitBtn12Click(Sender : TObject);
     procedure sBitBtn6Click(Sender : TObject);
@@ -373,6 +374,7 @@ end;
 procedure TForm3.sBitBtn32Click(Sender : TObject);
 begin
   //006237C0
+  if (Data.ABSEmp.State in dsWriteModes) then Data.ABSEmp.post;
   sBitBtn12Click(Sender);  //sauvgarder les primes
   Data.ABSQueryEmp.Refresh;
   ModalResult :=mrok;

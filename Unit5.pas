@@ -1,4 +1,4 @@
-unit Unit5;
+unit Unit5;           
 
 interface
 
@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics,
   Controls, Forms, Dialogs, StdCtrls, DBCtrls, sDBComboBox, sCheckBox,
   Mask, sDBEdit, Buttons, sBitBtn, sLabel, ExtCtrls, sPanel,
-  sDBLookupComboBox ;
+  sDBLookupComboBox,DB ;
 type
   TForm5=class(TForm)
     sPanel2: TsPanel;
@@ -68,10 +68,7 @@ procedure TForm5.sBitBtn32Click(Sender : TObject);
 begin
   //0061B674
   with data do begin
-    AbsEmpCorp.AsString := ABSCorpscorp.AsString;
-    AbsEmpFiliere.AsString := ABSfilieresNom.AsString;
-    AbsEmpGradeFiliere.AsString := ABSCorpfiliereNom.AsString;
-    AbsEmpGrade.AsString :=  ABSGradegrade.AsString;
+    
     AbsEmpCategorie.AsInteger := ABSGradecategorie.AsInteger;
     AbsEmpindice.AsInteger := ABSGradeindice.AsInteger;
     AbsEmpindice_9.AsInteger :=  ABSGradeindice_9.AsInteger;
@@ -86,7 +83,7 @@ begin
       AbsEmpindiceEchelon.AsInteger :=ABSPromoIndice.AsInteger;
     end;
      AbsEmpPosteSuper.AsBoolean := sCheckBox1.Checked;
-     ABSEmp.Refresh;
+     if (ABSEmp.State in dsWriteModes) then ABSEmp.Refresh;
      //CalculPrimes;
   end;
   close;

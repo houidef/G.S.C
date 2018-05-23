@@ -81,7 +81,6 @@ type
     sDBComboBox3: TsDBComboBox;
     sDBComboBox4: TsDBComboBox;
     sDBLookupComboBox2: TsDBLookupComboBox;
-    sBitBtn13: TsBitBtn;
     ActionList1: TActionList;
     DataSetPost1: TDataSetPost;
     DataSetPost2: TDataSetPost;
@@ -142,7 +141,7 @@ begin
   with Data do begin
     if(ABSEmpSituation_f.IsNull)then
       Form4.Timer1.Enabled := True;
-      if not (ABSEmp.State in dsWriteModes) then ABSEmp.Post; //Refresh;
+      if (ABSEmp.State in dsWriteModes) then ABSEmp.Post; //Refresh;
   end;
   Close;
 end;
@@ -887,6 +886,7 @@ end;
 procedure TForm4.sBitBtn11Click(Sender : TObject);
 begin
   //00613ECC
+  if (Data.ABSenfant.State in dsWriteModes) then Data.ABSenfant.post;
   Data.UpdateZawaj;
   sNotebook1.Visible:=false;
 end;
