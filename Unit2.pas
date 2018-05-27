@@ -182,7 +182,6 @@ type
     ABSPosteSuperid: TAutoIncField;
     ABSPosteSuperNom: TStringField;
     ABSPosteSuperindice: TIntegerField;
-    ABSGender: TABSQuery;
     ABSDataGender: TDataSource;
     AbsEmpGenre: TIntegerField;
     ABSQueryEmp: TABSQuery;
@@ -403,6 +402,10 @@ type
     ABSMGSalaireSSociale25: TCurrencyField;
     ABSMGSalaireIrg: TCurrencyField;
     ABSMGSalaireNet: TCurrencyField;
+    ABSGendre: TABSTable;
+    ABSQueryEmpgendre1: TStringField;
+    AbsEmpIdGrade: TIntegerField;
+    AbsEmpContra: TBooleanField;
     procedure AbsEmpCalcFields(DataSet: TDataSet);
     procedure ABSQueryEmpAfterScroll(DataSet: TDataSet);
   private

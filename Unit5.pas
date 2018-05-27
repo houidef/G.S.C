@@ -68,22 +68,26 @@ procedure TForm5.sBitBtn32Click(Sender : TObject);
 begin
   //0061B674
   with data do begin
-    
-    AbsEmpCategorie.AsInteger := ABSGradecategorie.AsInteger;
-    AbsEmpindice.AsInteger := ABSGradeindice.AsInteger;
-    AbsEmpindice_9.AsInteger :=  ABSGradeindice_9.AsInteger;
-    AbsEmpindice_2.AsInteger := ABSGradeindice_2.AsInteger;
-    if(ABSPromo.IsEmpty)then begin
-      AbsEmpEchelon.AsInteger:=0;
-      AbsEmpindiceEchelon.AsInteger :=0;
-    end
-    else begin
-      ABSPromo.Last;
-      AbsEmpEchelon.AsInteger:=ABSPromoN_Echlon.AsInteger;
-      AbsEmpindiceEchelon.AsInteger :=ABSPromoIndice.AsInteger;
-    end;
-     AbsEmpPosteSuper.AsBoolean := sCheckBox1.Checked;
-     if (ABSEmp.State in dsWriteModes) then ABSEmp.Refresh;
+    if(AbsEmp.State in dsWriteModes )then begin
+        if(ABSCorpsid.AsInteger = 2) then  AbsEmpContra.AsBoolean := True
+        else AbsEmpContra.AsBoolean := false;
+        AbsEmpIdGrade.AsInteger := ABSGradeId.Asinteger;
+        AbsEmpCategorie.AsInteger := ABSGradecategorie.AsInteger;
+        AbsEmpindice.AsInteger := ABSGradeindice.AsInteger;
+        AbsEmpindice_9.AsInteger :=  ABSGradeindice_9.AsInteger;
+        AbsEmpindice_2.AsInteger := ABSGradeindice_2.AsInteger;
+        if(ABSPromo.IsEmpty)then begin
+          AbsEmpEchelon.AsInteger:=0;
+          AbsEmpindiceEchelon.AsInteger :=0;
+        end
+        else begin
+          ABSPromo.Last;
+          AbsEmpEchelon.AsInteger:=ABSPromoN_Echlon.AsInteger;
+          AbsEmpindiceEchelon.AsInteger :=ABSPromoIndice.AsInteger;
+        end;
+         AbsEmpPosteSuper.AsBoolean := sCheckBox1.Checked;
+         ABSEmp.post;
+     end;
      //CalculPrimes;
   end;
   close;

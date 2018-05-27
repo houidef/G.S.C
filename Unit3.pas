@@ -8,7 +8,8 @@ uses
   ExtCtrls, acImage, sLabel, sDBText, DBCtrls, Grids, DBGrids, acDBGrid,
   sDBComboBox, sDBEdit, Buttons, sBitBtn, Mask, sMaskEdit,
   sCustomComboEdit, sToolEdit, sDBDateEdit, sPanel, ComCtrls, sPageControl,
-  sEdit, sComboBox, sSpinEdit, sDBLookupComboBox, ActnList, DBActns;
+  sEdit, sComboBox, sSpinEdit, sDBLookupComboBox, ActnList, DBActns,
+  acNoteBook;
 type
   TForm3=class(TForm)
     sOpenPictureDialog1: TsOpenPictureDialog;
@@ -112,13 +113,7 @@ type
     sBitBtn9: TsBitBtn;
     sBitBtn10: TsBitBtn;
     sPanel16: TsPanel;
-    sLabelFX34: TsLabelFX;
     sPanel18: TsPanel;
-    sLabelFX36: TsLabelFX;
-    sLabelFX40: TsLabelFX;
-    sLabelFX37: TsLabelFX;
-    sDBEdit28: TsDBEdit;
-    sDBEdit29: TsDBEdit;
     sBitBtn11: TsBitBtn;
     sBitBtn18: TsBitBtn;
     sPanel25: TsPanel;
@@ -140,9 +135,6 @@ type
     sBitBtn32: TsBitBtn;
     sDBEdit43: TsDBEdit;
     sBitBtn5: TsBitBtn;
-    sLabelFX54: TsLabelFX;
-    DBLookupComboBox1: TDBLookupComboBox;
-    DBLookupComboBox2: TDBLookupComboBox;
     sTabSheet4: TsTabSheet;
     sPanel38: TsPanel;
     CheckBox: TCheckBox;
@@ -216,16 +208,28 @@ type
     sDBEdit9: TsDBEdit;
     CheckBox17: TCheckBox;
     sDBText20: TsDBText;
-    sDateEdit1: TsDateEdit;
     sComboBox1: TsComboBox;
     sComboBox2: TsComboBox;
     sSpinEdit1: TsSpinEdit;
     sDBLookupComboBox1: TsDBLookupComboBox;
     sDBLookupComboBox2: TsDBLookupComboBox;
     sDBLookupComboBox3: TsDBLookupComboBox;
-    ActionList1: TActionList;
-    DataSetPost1: TDataSetPost;
     sDBLookupComboBox4: TsDBLookupComboBox;
+    sNotebook1: TNotebook;
+    sLabelFX34: TsLabelFX;
+    sLabelFX36: TsLabelFX;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
+    sLabelFX40: TsLabelFX;
+    sLabelFX37: TsLabelFX;
+    sDBEdit29: TsDBEdit;
+    sDBEdit28: TsDBEdit;
+    sLabelFX54: TsLabelFX;
+    sDateEdit1: TsDateEdit;
+    sLabelFX52: TsLabelFX;
+    sDBEdit34: TsDBEdit;
+    sDateEdit2: TsDateEdit;
+    sLabelFX53: TsLabelFX;
     procedure sBitBtn13Click(Sender : TObject);
     procedure sBitBtn12Click(Sender : TObject);
     procedure sBitBtn6Click(Sender : TObject);
@@ -267,7 +271,7 @@ type
     procedure _PROC_00627DDC(Sender : TObject);
     procedure _PROC_00627E0C(Sender : TObject);
     procedure _PROC_00627E14(Sender : TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -743,14 +747,22 @@ end;
 
 procedure TForm3.FormShow(Sender : TObject);
 var
-  Buffer,i : Integer;
+  i,Primes : Integer;
 begin
   FlagOnClick := False;
+
   with Data do begin
-    Buffer := AbsEmpPrimes.AsInteger;
+    //teste si les Primes sauvgardé dans l'emp
+    if(AbsEmpPrimes.AsInteger = 0 )then begin
+       AbsQuery1.SQL.Add('select * from "grades" e1 where e1.id = '+AbsEmpIdGrade.AsString);
+       AbsQuery1.open;
+       Primes := AbsQuery1.fieldbyname('primes').AsInteger; 
+    end
+    else  Primes := AbsEmpPrimes.AsInteger;
+
     for i:=0 to 31 do begin
-       Bools[i] := Boolean(Buffer and 1);
-       Buffer := Buffer shr 1;
+       Bools[i] := Boolean(Primes and 1);
+       Primes := Primes shr 1;
     end;
      CheckBox.Checked  := Bools[PrServicesAdmsCommuns];
      CheckBox1.Checked := Bools[PrServicesTechCommuns];
@@ -1078,9 +1090,15 @@ begin
 *)
 end;
 
-procedure TForm3.FormCreate(Sender: TObject);
+procedure TForm3.FormActivate(Sender: TObject);
 begin
-    data.AbsEmp.Edit;
+    ShowMessage(data.AbsEmpcorp.AsString +':'+ data.AbsEmpNom_prenom.AsString);
+    if(data.AbsEmpcorp.AsString = 'ÇáÚãÇá ÇáãÊÚÇÞÏæä') then
+        sNotebook1.PageIndex:= 1
+    else
+        sNotebook1.PageIndex:= 0;
+
+    //data.AbsEmp.Edit;
 end;
 
 end.

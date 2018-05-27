@@ -8284,7 +8284,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- data.ABSGender.Open;
+ //data.ABSGender.Open;
 end;
 
 procedure TForm1.sDBGrid2DblClick(Sender: TObject);
